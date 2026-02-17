@@ -1,0 +1,26 @@
+# Environments
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# OS / Editor
+.DS_Store
+.vscode/
+.idea/
+
+# Secrets
+.env
+
+# Outputs / artifacts / local data (POC)
+artifacts/
+outputs/
+data/raw/
+data/interim/
+data/processed/
