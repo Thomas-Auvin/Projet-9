@@ -17,6 +17,7 @@ class DeterministicEmbeddings(Embeddings):
     """
     Deterministic embeddings for unit tests / dry-run (no network, no API key).
     """
+
     def __init__(self, dim: int = 64):
         self.dim = dim
 
