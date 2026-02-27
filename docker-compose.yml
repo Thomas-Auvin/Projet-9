@@ -1,0 +1,37 @@
+services:
+  api:
+    build: .
+    container_name: p9-api
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      # garde des defaults clairs côté conteneur
+      P9_INDEX_DIR: /app/artifacts/faiss_index_mistral
+      P9_PROCESSED_CSV: /app/data/processed/events_processed_geo.csv
+      P9_K_DEFAULT: "6"
+      APP_ENV: ${APP_ENV:-dev}
+    volumes:
+      - ./data:/app/data
+      - ./artifacts:/app/artifacts
+      - ./outputs:/app/outputs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health').read()"]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+
+  rebuild:
+    build: .
+    profiles: ["tools"]
+    env_file:
+      - .env
+    environment:
+      P9_INDEX_DIR: /app/artifacts/faiss_index_mistral
+      P9_PROCESSED_CSV: /app/data/processed/events_processed_geo.csv
+    volumes:
+      - ./data:/app/data
+      - ./artifacts:/app/artifacts
+    command: ["uv", "run", "python", "scripts/build_index.py", "--out", "/app/artifacts/faiss_index_mistral"]

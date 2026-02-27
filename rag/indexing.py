@@ -97,7 +97,9 @@ class SplitConfig:
     chunk_overlap: int = 120
 
 
-def split_documents(docs: list[Document], cfg: SplitConfig = SplitConfig()) -> list[Document]:
+def split_documents(
+    docs: list[Document], cfg: SplitConfig = SplitConfig()
+) -> list[Document]:
     """
     Split documents into chunks for embedding/retrieval.
     """
@@ -128,4 +130,6 @@ def load_faiss_index(index_dir: Path, embeddings: Any) -> FAISS:
     """
     Load FAISS index saved with save_local.
     """
-    return FAISS.load_local(str(index_dir), embeddings, allow_dangerous_deserialization=True)
+    return FAISS.load_local(
+        str(index_dir), embeddings, allow_dangerous_deserialization=True
+    )

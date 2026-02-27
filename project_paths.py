@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
+
 def find_root(start: Path | None = None) -> Path:
     """
     Find project root by walking up until we find pyproject.toml (or .git).
@@ -28,7 +29,13 @@ DOCS_DIR = ROOT / "docs"
 
 # Create dirs (safe if they already exist)
 for d in [
-    DATA_DIR, RAW_DIR, INTERIM_DIR, PROCESSED_DIR, EVAL_DIR,
-    ARTIFACTS_DIR, OUTPUTS_DIR, DOCS_DIR
+    DATA_DIR,
+    RAW_DIR,
+    INTERIM_DIR,
+    PROCESSED_DIR,
+    EVAL_DIR,
+    ARTIFACTS_DIR,
+    OUTPUTS_DIR,
+    DOCS_DIR,
 ]:
     d.mkdir(parents=True, exist_ok=True)

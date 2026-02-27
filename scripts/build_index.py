@@ -7,11 +7,19 @@ from dotenv import load_dotenv
 
 from project_paths import ARTIFACTS_DIR, PROCESSED_DIR
 from rag.embeddings import DeterministicEmbeddings, get_mistral_embeddings
-from rag.indexing import SplitConfig, build_faiss_index, events_to_documents, load_processed_events, split_documents
+from rag.indexing import (
+    SplitConfig,
+    build_faiss_index,
+    events_to_documents,
+    load_processed_events,
+    split_documents,
+)
 
 
 def parse_args() -> argparse.Namespace:
-    p = argparse.ArgumentParser(description="Build FAISS index from processed events CSV.")
+    p = argparse.ArgumentParser(
+        description="Build FAISS index from processed events CSV."
+    )
     p.add_argument(
         "--input",
         type=Path,

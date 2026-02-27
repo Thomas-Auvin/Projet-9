@@ -36,12 +36,16 @@ def main() -> None:
     print(f"Top-{args.k} results:\n")
     for i, d in enumerate(docs, 1):
         md = d.metadata
-        print(f"[{i}] {md.get('title','')}")
-        print(f"    url: {md.get('url','')}")
-        print(f"    city: {md.get('city','')} | dept: {md.get('department','')} | region: {md.get('region','')}")
-        print(f"    start: {md.get('event_start','')} | end: {md.get('event_end','')}")
+        print(f"[{i}] {md.get('title', '')}")
+        print(f"    url: {md.get('url', '')}")
+        print(
+            f"    city: {md.get('city', '')} | dept: {md.get('department', '')} | region: {md.get('region', '')}"
+        )
+        print(
+            f"    start: {md.get('event_start', '')} | end: {md.get('event_end', '')}"
+        )
         print(f"    upcoming: {md.get('is_upcoming', False)}")
-        print(f"    snippet: {d.page_content[:180].replace('\\n',' ')}")
+        print(f"    snippet: {d.page_content[:180].replace('\\n', ' ')}")
         print("")
 
 

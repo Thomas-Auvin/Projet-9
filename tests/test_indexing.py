@@ -2,11 +2,15 @@ from __future__ import annotations
 
 from pathlib import Path
 
-import pandas as pd
 from langchain_core.documents import Document
 
 from rag.embeddings import DeterministicEmbeddings
-from rag.indexing import SplitConfig, build_faiss_index, load_faiss_index, split_documents
+from rag.indexing import (
+    SplitConfig,
+    build_faiss_index,
+    load_faiss_index,
+    split_documents,
+)
 
 
 def test_build_and_query_faiss(tmp_path: Path) -> None:

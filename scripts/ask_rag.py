@@ -12,7 +12,9 @@ from rag.rag_chain import answer_question
 
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description="Ask the RAG system (FAISS + Mistral).")
-    p.add_argument("--index-dir", type=Path, default=ARTIFACTS_DIR / "faiss_index_mistral")
+    p.add_argument(
+        "--index-dir", type=Path, default=ARTIFACTS_DIR / "faiss_index_mistral"
+    )
     p.add_argument("--q", type=str, required=True)
     p.add_argument("--k", type=int, default=6)
     return p.parse_args()

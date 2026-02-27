@@ -34,7 +34,14 @@ def build_context(docs: list[Document]) -> tuple[str, list[dict[str, str]]]:
         end = str(md.get("event_end", "") or "")
 
         sources.append(
-            {"id": sid, "title": title, "url": url, "city": city, "start": start, "end": end}
+            {
+                "id": sid,
+                "title": title,
+                "url": url,
+                "city": city,
+                "start": start,
+                "end": end,
+            }
         )
 
         blocks.append(
@@ -62,7 +69,9 @@ def _mistral_chat(client: Mistral, model: str, system: str, user: str) -> str:
         resp = client.chat.complete(model=model, messages=messages, temperature=0.2)
         return resp.choices[0].message.content
     except AttributeError:
-        resp = client.chat.completions.create(model=model, messages=messages, temperature=0.2)
+        resp = client.chat.completions.create(
+            model=model, messages=messages, temperature=0.2
+        )
         return resp.choices[0].message.content
 
 
@@ -95,13 +104,15 @@ def answer_question(
         "Termine par une section 'Sources' listant les IDs [S1..] utilisés."
     )
 
-    user = (
-        f"QUESTION:\n{question}\n\n"
-        f"CONTEXTE:\n{context_text}\n\n"
-        "RÉPONSE:"
-    )
+    user = f"QUESTION:\n{question}\n\nCONTEXTE:\n{context_text}\n\nRÉPONSE:"
 
     client = Mistral(api_key=api_key)
     answer = _mistral_chat(client, model=model, system=system, user=user)
 
-    return {"question": question, "answer": answer, "sources": sources, "k": k, "model": model}
+    return {
+        "question": question,
+        "answer": answer,
+        "sources": sources,
+        "k": k,
+        "model": model,
+    }
