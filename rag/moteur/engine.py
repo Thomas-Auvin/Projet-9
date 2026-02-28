@@ -14,7 +14,7 @@ from zoneinfo import ZoneInfo
 from dotenv import load_dotenv
 from mistralai import Mistral
 
-from rag.indexing import (
+from rag.preparation.indexing import (
     SplitConfig,
     build_faiss_index,
     events_to_documents,
@@ -22,7 +22,7 @@ from rag.indexing import (
     load_processed_events,
     split_documents,
 )
-from rag.rag_chain import _mistral_chat, build_context
+from rag.moteur.rag_chain import _mistral_chat, build_context
 
 
 _tz_name = os.environ.get("P9_TZ", "Europe/Paris")

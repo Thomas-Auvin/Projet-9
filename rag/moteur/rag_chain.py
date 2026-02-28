@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 from mistralai import Mistral
 from langchain_core.documents import Document
 
-from rag.indexing import load_faiss_index
+from rag.preparation.indexing import load_faiss_index
 
 
 def _short(s: str, n: int = 650) -> str:

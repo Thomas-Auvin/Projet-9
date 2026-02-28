@@ -17,8 +17,9 @@ from app.schemas import (
     FeedbackRequest,
     FeedbackResponse,
 )
-from rag.embeddings import get_mistral_embeddings
-from rag.engine import RagEngine
+from rag.preparation.embeddings import get_mistral_embeddings
+from rag.moteur.engine import RagEngine
+
 
 ENGINE: Optional[RagEngine] = None
 
