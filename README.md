@@ -47,9 +47,9 @@ uv run uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 
 ## Architecture
 
-[Voir le diagramme UML](out\architecture\Architecture.png)
+[Voir le diagramme UML](out/architecture/Architecture.png)
 
-![Diagramme UML](out\architecture\Architecture.png)
+![Diagramme UML](out/architecture/Architecture.png)
 
 ### Description de l'API
 
