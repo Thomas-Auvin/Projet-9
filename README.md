@@ -17,8 +17,6 @@ POC d’un système **RAG** (Retrieval-Augmented Generation) pour recommander de
 - [Développement local (uv)](#développement-local-uv)
 - [Tests & Qualité](#tests--qualité)
 - [Évaluation (RAGAS)](#évaluation-ragas)
-- [Architecture](#architecture)
-- [Dépannage](#dépannage)
 
 ---
 
@@ -47,17 +45,21 @@ Si vous souhaitez la lancer en local utilisez la commande suivante :
 uv run uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-### Description de l'API
+## Architecture
 
-## Endpoints API
+[Voir le diagramme UML](out\architecture\Architecture.png)
+
+![Diagramme UML](out\architecture\Architecture.png)
+
+### Description de l'API
 
 L’API est définie dans app/main.py :
 
-GET /health → état OK 
-POST /ask → pose une question (RAG) 
-GET /history → historique des derniers tours (taille configurable) 
-POST /feedback → vote sur un turn_id (sert au suivi/itérations) 
-POST /rebuild → reconstruit l’index (protégé par token) 
+- GET /health → état OK 
+- POST /ask → pose une question (RAG) 
+- GET /history → historique des derniers tours (taille configurable) 
+- POST /feedback → vote sur un turn_id (sert au suivi/itérations) 
+- POST /rebuild → reconstruit l’index (protégé par token) 
 
 Pour poser une question, utilisez POST /ask en remplissant le JSON minimal :
 ```json
@@ -78,21 +80,22 @@ X-Rebuild-Token: <REBUILD_TOKEN>
 
 L’API lit ces variables au démarrage : 
 
-MISTRAL_API_KEY (obligatoire ; utilisé par le moteur RAG)
-P9_INDEX_DIR (défaut : artifacts/faiss_index_mistral) 
-P9_PROCESSED_CSV (défaut : data/processed/events_processed_geo.csv) 
-P9_K_DEFAULT (défaut : 6) 
-MISTRAL_CHAT_MODEL (défaut : mistral-small-latest) 
-MISTRAL_EMBED_MODEL (défaut : mistral-embed) 
-P9_HISTORY_SIZE (défaut : 10) 
-P9_HISTORY_PROMPT_TURNS (défaut : 3) 
-REBUILD_TOKEN (optionnel ; active /rebuild) 
+- MISTRAL_API_KEY (obligatoire ; utilisé par le moteur RAG)
+- P9_INDEX_DIR (défaut : artifacts/faiss_index_mistral) 
+- P9_PROCESSED_CSV (défaut : data/processed/events_processed_geo.csv) 
+- P9_K_DEFAULT (défaut : 6) 
+- MISTRAL_CHAT_MODEL (défaut : mistral-small-latest) 
+- MISTRAL_EMBED_MODEL (défaut : mistral-embed) 
+- P9_HISTORY_SIZE (défaut : 10) 
+- P9_HISTORY_PROMPT_TURNS (défaut : 3) 
+- REBUILD_TOKEN (optionnel ; active /rebuild) 
 
 Pour remplis la clé mistral, il est nécessaire de s'inscrire et de demander une clé sur l'application Mistral à l'adresse suivante : https://admin.mistral.ai/organization/api-keys
 
 ### Tests & Qualité
 
-Pour toutes modifications du code, la branche main est protégé et une demande de pull request est nécessaire. Elle passera nécessairement par un CI. 
+Pour toutes modifications du code, la branche main est protégé.
+PR obligatoire + CI ruff/pytest 
 Afin de vérifier la qualité du code, vous pouvez lancer les tests en local : 
 
 ```bash
