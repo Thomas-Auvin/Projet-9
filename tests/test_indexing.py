@@ -4,8 +4,8 @@ from pathlib import Path
 
 from langchain_core.documents import Document
 
-from rag.embeddings import DeterministicEmbeddings
-from rag.indexing import (
+from rag.preparation.embeddings import DeterministicEmbeddings
+from rag.preparation.indexing import (
     SplitConfig,
     build_faiss_index,
     load_faiss_index,
