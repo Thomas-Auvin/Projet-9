@@ -5,6 +5,7 @@ from fastapi.testclient import TestClient
 import app.main as main_mod
 import json
 
+
 class FakeEngine:
     def ask(self, question: str, k: int | None = None):
         kk = 6 if k is None else k
