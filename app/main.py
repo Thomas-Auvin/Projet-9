@@ -12,20 +12,48 @@ from app.schemas import (
     AskRequest,
     AskResponse,
     RebuildResponse,
-    HistoryResponse,
-    HistoryItem,
     FeedbackRequest,
     FeedbackResponse,
 )
 from rag.preparation.embeddings import get_mistral_embeddings
 from rag.moteur.engine import RagEngine
+import json
+from datetime import datetime, timezone
 
+from project_paths import OUTPUTS_DIR
 
 ENGINE: Optional[RagEngine] = None
 
 
 def _env_path(name: str, default: str) -> Path:
     return Path(os.environ.get(name, default))
+
+
+def _feedback_path() -> Path:
+    # Override test/docker friendly. Default: outputs/feedback.jsonl
+    return Path(os.environ.get("P9_FEEDBACK_PATH", str(OUTPUTS_DIR / "feedback.jsonl")))
+
+
+def _iso_utc_now() -> str:
+    return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+
+
+def _find_turn_in_history(engine: RagEngine, turn_id: str) -> dict | None:
+    # engine.get_history() renvoie une liste de dicts (cf /history) :contentReference[oaicite:4]{index=4}
+    try:
+        items = engine.get_history()
+    except Exception:
+        return None
+    for it in items or []:
+        if it.get("turn_id") == turn_id:
+            return it
+    return None
+
+
+def _append_jsonl(path: Path, record: dict) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("a", encoding="utf-8") as f:
+        f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
 
 def get_engine() -> RagEngine:
@@ -93,12 +121,6 @@ def ask(req: AskRequest, engine: RagEngine = Depends(get_engine)) -> AskResponse
         raise HTTPException(status_code=500, detail=str(e))
 
 
-@app.get("/history", response_model=HistoryResponse)
-def history(engine: RagEngine = Depends(get_engine)) -> HistoryResponse:
-    items = engine.get_history()
-    return HistoryResponse(items=[HistoryItem(**it) for it in items])
-
-
 @app.post("/feedback", response_model=FeedbackResponse)
 def feedback(
     req: FeedbackRequest, engine: RagEngine = Depends(get_engine)
@@ -110,7 +132,39 @@ def feedback(
                 status_code=404,
                 detail="turn_id not found (too old or server restarted).",
             )
+
+        # Build record (minimal + enrichi si on retrouve le turn dans l'historique)
+        record: dict = {
+            "ts_utc": _iso_utc_now(),
+            "turn_id": req.turn_id,
+            "vote": req.vote,
+        }
+
+        ctx = _find_turn_in_history(engine, req.turn_id)
+        if ctx:
+            # On logge les champs utiles s'ils existent.
+            for k in [
+                "question",
+                "answer",
+                "sources",
+                "model",
+                "k",
+                "rating",
+                "prompt_variant",
+                "prompt_version",
+            ]:
+                if k in ctx:
+                    record[k] = ctx.get(k)
+
+        try:
+            _append_jsonl(_feedback_path(), record)
+        except OSError as e:
+            raise HTTPException(
+                status_code=500, detail=f"Failed to persist feedback: {e}"
+            ) from e
+
         return FeedbackResponse(status="ok", turn_id=req.turn_id, rating=req.vote)
+
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
 
