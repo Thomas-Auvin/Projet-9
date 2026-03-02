@@ -12,8 +12,6 @@ from app.schemas import (
     AskRequest,
     AskResponse,
     RebuildResponse,
-    HistoryResponse,
-    HistoryItem,
     FeedbackRequest,
     FeedbackResponse,
 )
