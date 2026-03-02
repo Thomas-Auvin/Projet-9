@@ -260,9 +260,7 @@ class RagEngine:
                 )
             else:
                 docs = docs[:kk]
-                time_guidance = (
-                    "La question porte sur le passé. Tu peux proposer des événements passés correspondant à la demande."
-                )
+                time_guidance = "La question porte sur le passé. Tu peux proposer des événements passés correspondant à la demande."
 
         else:
             docs = docs[:kk]

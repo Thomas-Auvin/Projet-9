@@ -49,7 +49,9 @@ def load_questions_jsonl(path: Path, limit: int | None = None) -> list[str]:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--questions", type=str, default="evals/datasets/questions.jsonl")
+    parser.add_argument(
+        "--questions", type=str, default="evals/datasets/questions.jsonl"
+    )
     parser.add_argument("--k", type=int, default=6)
     parser.add_argument("--limit", type=int, default=0, help="0 = no limit")
     parser.add_argument("--outdir", type=str, default="evals/experiments")
@@ -73,11 +75,15 @@ def main() -> None:
     prompt_variant_env = os.environ.get("P9_PROMPT_VARIANT", "v2")
     prompt_version_env = os.environ.get("P9_PROMPT_VERSION", "v2_1")
     debug_prompt = os.environ.get("P9_DEBUG_PROMPT", "0")
-    print(f"Prompt: variant={prompt_variant_env} version={prompt_version_env} debug={debug_prompt}")
+    print(
+        f"Prompt: variant={prompt_variant_env} version={prompt_version_env} debug={debug_prompt}"
+    )
 
     # --- Init your RAG engine (same config as the API) ---
     index_dir = Path(os.environ.get("P9_INDEX_DIR", "artifacts/faiss_index_mistral"))
-    processed_csv = Path(os.environ.get("P9_PROCESSED_CSV", "data/processed/events_processed_geo.csv"))
+    processed_csv = Path(
+        os.environ.get("P9_PROCESSED_CSV", "data/processed/events_processed_geo.csv")
+    )
     k_default = int(os.environ.get("P9_K_DEFAULT", "6"))
     chat_model = os.environ.get("MISTRAL_CHAT_MODEL", "mistral-small-latest")
     embed_model = os.environ.get("MISTRAL_EMBED_MODEL", "mistral-embed")
@@ -146,7 +152,9 @@ def main() -> None:
         ans = ans[:max_ans_chars]
 
         try:
-            f = faithfulness.score(user_input=q, response=ans, retrieved_contexts=ctxs).value
+            f = faithfulness.score(
+                user_input=q, response=ans, retrieved_contexts=ctxs
+            ).value
         except Exception as e:
             print("Faithfulness failed for:", q, "|", type(e).__name__, str(e)[:120])
             f = math.nan
