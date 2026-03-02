@@ -1,0 +1,425 @@
+question,answer,k,faithfulness,answer_relevancy,n_contexts,turn_id,prompt_variant,prompt_version,chat_model,index_dir
+Que faire ce week-end à Bordeaux ?,"Voici quelques événements passés à Bordeaux qui pourraient vous inspirer pour des activités similaires à l'avenir :
+
+1. **Retour de bâton anti-écologique : comment les médias résistent-ils ?**
+   - Dates : 2025-10-29
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/medias-quand-la-presse-independante-fait-vivre-les-valeurs-de-less)
+
+2. **Causerie d'histoire : La bataille du Rio de la Plata**
+   - Dates : 2025-07-18
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/causerie-dhistoire-la-bataille-du-rio-de-la-plata)
+
+3. **Semaine Bleu : Bal Bim Boum : bal intergénérationnel**
+   - Dates : 2025-10-12
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/la-salle-des-fetes-bordeaux-grand-parc/events/bal-bim-boum-bal-intergenerationnel)
+
+4. **Bordeaux passé-présent : voyage dans le port de la Lune**
+   - Dates : 2025-05-14
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/traverse-levenement-fleuves/events/bordeaux-passe-present-voyage-dans-le-port-de-la-lune)
+
+5. **En faire des tartines : Atelier cuisine (Festival BON!)**
+   - Dates : 2025-10-17
+   - Ville : Bo",6,0.9,0.7317724812381122,4,8a2ca155a81b4ec9b35c9c97eb61f529,v2,v2_1,mistral-small-latest,artifacts\faiss_index_mistral
+Propose-moi 5 idées de sorties à Bordeaux pour ce soir.,"Voici quelques idées de sorties à Bordeaux pour ce soir, basées sur des événements passés qui pourraient vous inspirer :
+
+1. **BOUTURES - Malo Lafleur**
+   - Dates : 2026-04-16 au 2026-04-18
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux/events/boutures-malo-lafleur)
+
+2. **Soirée de lancement des balades urbaines**
+   - Dates : 2025-05-15
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/soiree-de-lancement-des-balades-urbaines)
+
+3. **Retour de bâton anti-écologique : comment les médias résistent-ils ?**
+   - Dates : 2025-10-29
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/medias-quand-la-presse-independante-fait-vivre-les-valeurs-de-less)
+
+4. **La Fresque des possibles**
+   - Dates : 2025-10-02
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/la-fresque-des-possibles-6498712)
+
+5. **Fête de fin d'année ""Avoir 20 ans""**
+   - Dates : 2025-07-08
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/fete-de-fin-dannee-avoir-20-ans)
+
+Sources: [S1],",6,0.8,0.9303264610189313,4,94ebc7c47f13478d9aed9f86deb63d8a,v2,v2_1,mistral-small-latest,artifacts\faiss_index_mistral
+Quelles activités sont prévues demain à Bordeaux ?,"Je n'ai pas trouvé d'événements prévus demain à Bordeaux. Voici quelques événements passés qui pourraient vous inspirer pour des activités similaires à l'avenir :
+
+1. **Matinée talents pour tous les voisins, petits comme grands**
+   - Dates : 2025-07-26
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/matinee-talents-pour-tous-les-voisins-petits-comme-grands)
+
+2. **Retour de bâton anti-écologique : comment les médias résistent-ils ?**
+   - Dates : 2025-10-29
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/medias-quand-la-presse-independante-fait-vivre-les-valeurs-de-less)
+
+3. **Parking Day : semaine de la mobilité + réparation de vélo**
+   - Dates : 2025-09-19
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/parking-day-semaine-de-la-mobilite)
+
+4. **La Fresque des possibles**
+   - Dates : 2025-10-02
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/la-fresque-des-possibles-6498712)
+
+5. **Bordeaux passé-présent : voyage dans le port de la Lune**
+   - Dates : 2025-05-14
+   - ",6,0.6666666666666666,0.8550153374085182,4,027d0267a7b243d68d58e166b72cfea6,v2,v2_1,mistral-small-latest,artifacts\faiss_index_mistral
+Je cherche une sortie en extérieur à Bordeaux ce week-end.,"Je n'ai pas trouvé d'événements en extérieur à Bordeaux pour ce week-end. Voici quelques événements passés qui pourraient vous inspirer pour des activités similaires à l'avenir :
+
+1. **Balade urbaine ESS : ""Le tissu solidaire de Saint-Michel"" (forum du GSEF)**
+   - Dates : 2025-10-29
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/balade-urbaine-ess-le-tissu-solidaire-de-saint-michel-forum-du-gsef)
+
+2. **Balade urbaine ESS : ""Le tissu solidaire de Saint-Michel"" (forum du GSEF)**
+   - Dates : 2025-10-31
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/balade-urbaine-ess-le-tissu-solidaire-de-saint-michel-forum-du-gsef-7922339)
+
+3. **Balade botanique**
+   - Dates : 2025-09-24
+   - Ville : Bruges
+   - URL : [Lien](https://openagenda.com/maison-du-jardinier-et-de-la-nature-en-ville/events/balade-botanique-3897550)
+
+Sources: [S2], [S3], [S5]",6,0.5,0.0,4,8ad75aef76e84527a9f84d315aff52fd,v2,v2_1,mistral-small-latest,artifacts\faiss_index_mistral
+"Je veux une activité plutôt culturelle à Bordeaux, à venir.","Je n'ai pas trouvé d'événements culturels à venir à Bordeaux dans les 30 prochains jours. Voici quelques événements passés qui pourraient vous inspirer pour des activités similaires à l'avenir :
+
+1. **Petite enfance et grand âge : business lucratif ou projet collectif ?**
+   - Dates : 2025-10-30
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/debat-petite-enfance-et-grand-age-business-lucratif-ou-projet-collectif)
+
+2. **Atelier Bibliothérapie**
+   - Dates : 2025-10-18
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/atelier-bibliotherapie)
+
+3. **Atelier d'écriture : La Manucoplume**
+   - Dates : 2025-07-02
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/atelier-decriture-la-manucoplume)
+
+4. **Bordeaux passé-présent : voyage dans le port de la Lune**
+   - Dates : 2025-05-14
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/traverse-levenement-fleuves/events/bordeaux-passe-present-voyage-dans-le-port-de-la-lune)
+
+5. **Matinée talents pour tous les voisins, petits comme grands**
+   - Dates : 2025-07-26
+   - Ville ",6,0.5,0.8510642060410815,4,7a373fe3174e4b938c35dc067dd41919,v2,v2_1,mistral-small-latest,artifacts\faiss_index_mistral
+Je cherche une activité gratuite à Bordeaux (à venir si possible).,"Je n'ai pas trouvé d'événements gratuits à venir à Bordeaux dans les 30 prochains jours. Voici quelques événements passés qui pourraient vous inspirer pour des activités similaires à l'avenir :
+
+1. **Matinée talents pour tous les voisins, petits comme grands**
+   - Dates : 2025-07-26
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/matinee-talents-pour-tous-les-voisins-petits-comme-grands)
+
+2. **Balade urbaine ESS : ""Le tissu solidaire de Saint-Michel"" (forum du GSEF)**
+   - Dates : 2025-10-29
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/balade-urbaine-ess-le-tissu-solidaire-de-saint-michel-forum-du-gsef)
+
+3. **Atelier découverte crochet et tricot**
+   - Dates : 2025-10-23
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/atelier-decouverte-crochet-et-tricot-7918038)
+
+4. **En faire des tartines : Atelier cuisine (Festival BON!)**
+   - Dates : 2025-10-17
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/en-faire-des-tartines-atelier-cuisine)
+
+5. **Balade urbaine ESS : ""Le ",6,0.6666666666666666,0.0,4,eda3b0433fc94edbae6004f07788886e,v2,v2_1,mistral-small-latest,artifacts\faiss_index_mistral
+Je cherche une activité famille/enfants à Bordeaux (à venir si possible).,"Je n'ai pas trouvé d'événements famille/enfants à venir à Bordeaux dans les 30 prochains jours. Voici quelques événements passés qui pourraient vous inspirer pour des activités similaires à l'avenir :
+
+1. **Matinée talents pour tous les voisins, petits comme grands**
+   - Dates : 2025-07-26
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/matinee-talents-pour-tous-les-voisins-petits-comme-grands)
+
+2. **Des jeux en pagaille pour les enfants !**
+   - Dates : 2025-05-17
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ndm-2025-nouvelle-aquitaine/events/des-jeux-en-pagaille-pour-les-enfants)
+
+3. **Guignol Guérin au Parc Bordelais**
+   - Dates : 2025-04-28 → 2025-05-04
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/guignol-guerin-vacances-parc-bordelais)
+
+Sources: [S1], [S4], [S5]",6,0.5,0.9023038174139565,4,566279c970254e14b8acd16570652822,v2,v2_1,mistral-small-latest,artifacts\faiss_index_mistral
+Je cherche un atelier cuisine à Bordeaux (à venir si possible).,"Je n'ai pas trouvé d'ateliers cuisine à venir à Bordeaux dans les 30 prochains jours. Voici quelques événements passés qui pourraient vous inspirer pour des activités similaires à l'avenir :
+
+1. **La main à la pâte : Atelier cuisine (Festival BON!)**
+   - Dates : 2025-10-15
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/la-main-a-la-pate-atelier-cuisine)
+
+2. **En faire des tartines : Atelier cuisine (Festival BON!)**
+   - Dates : 2025-10-17
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/en-faire-des-tartines-atelier-cuisine)
+
+3. **Les secrets végé de Céline : Atelier cuisine (Festival BON!)**
+   - Dates : 2025-10-14
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/les-secrets-vege-de-celine-atelier-cuisine)
+
+Sources: [S1], [S2], [S3]",6,0.0,0.0,4,1585a641ee1c4d4bb1d5eb266c9daabb,v2,v2_1,mistral-small-latest,artifacts\faiss_index_mistral
+Je cherche un événement sur l’écologie ou le climat à Bordeaux (à venir si possible).,"Je n'ai pas trouvé d'événements sur l’écologie ou le climat à venir à Bordeaux dans les 30 prochains jours. Voici quelques événements passés qui pourraient vous inspirer pour des activités similaires à l'avenir :
+
+1. **Retour de bâton anti-écologique : comment les médias résistent-ils ?**
+   - Dates : 2025-10-29
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/medias-quand-la-presse-independante-fait-vivre-les-valeurs-de-less)
+
+2. **Devenir éducateur.rice à la consommation responsable avec e-graine NA**
+   - Dates : 2025-05-21
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/devenir-educateurrice-a-la-consommation-responsable-avec-e-graine-na)
+
+3. **Les écojournées de La Manuco**
+   - Dates : 2025-06-12 → 2025-06-14
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/les-ecojournees-de-la-manuco)
+
+4. **Atelier des Sols vivants**
+   - Dates : 2025-05-13
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/atelier-des-sols-vivants-9253765)
+
+5. **""Les espèces protégées : comment les ",6,0.8,0.90281977556933,4,87d142c1fc704e18ab704e812e01225f,v2,v2_1,mistral-small-latest,artifacts\faiss_index_mistral
+Je cherche une conférence ou un débat à Bordeaux (à venir si possible).,"Je n'ai pas trouvé de conférences ou débats à venir à Bordeaux dans les 30 prochains jours. Voici quelques événements passés qui pourraient vous inspirer pour des activités similaires à l'avenir :
+
+1. **Petite enfance et grand âge : business lucratif ou projet collectif ?**
+   - Dates : 2025-10-30
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/debat-petite-enfance-et-grand-age-business-lucratif-ou-projet-collectif)
+
+2. **Retour de bâton anti-écologique : comment les médias résistent-ils ?**
+   - Dates : 2025-10-29
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/medias-quand-la-presse-independante-fait-vivre-les-valeurs-de-less)
+
+3. **La Garonne dans tous ses états**
+   - Dates : 2025-05-16
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/traverse-levenement-fleuves/events/qualite-de-leau-de-la-garonne-quels-enjeux-une-conferencedebat)
+
+4. **Parlons migrations : comprendre autrement**
+   - Dates : 2025-07-07
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/parlons-migrations-comprendre-autrement)
+
+5. **Causeri",6,0.46153846153846156,0.7577154339469517,4,203836e3c5fd4ebd8494a986dce96770,v2,v2_1,mistral-small-latest,artifacts\faiss_index_mistral
+"Je cherche quelque chose à faire près de Bordeaux (Bègles, Pessac, Talence) ce week-end.","Je n'ai pas trouvé d'événements à venir près de Bordeaux (Bègles, Pessac, Talence) ce week-end. Voici quelques événements passés qui pourraient vous inspirer pour des activités similaires à l'avenir :
+
+1. **Découvrez les métiers de l'hôtellerie avec l'hôtel Ibis Styles de Bègles**
+   - Dates : 2025-03-18
+   - Ville : Bègles
+   - URL : [Lien](https://openagenda.com/semaine-des-metiers-du-tourisme/events/decouvrez-les-metiers-de-lhotellerie-avec-lhotel-ibis-styles-de-begles)
+
+2. **Matinée talents pour tous les voisins, petits comme grands**
+   - Dates : 2025-07-26
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/matinee-talents-pour-tous-les-voisins-petits-comme-grands)
+
+3. **Balade urbaine ESS : ""Le tissu solidaire de Saint-Michel"" (forum du GSEF)**
+   - Dates : 2025-10-29
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/balade-urbaine-ess-le-tissu-solidaire-de-saint-michel-forum-du-gsef)
+
+4. **Séance Ciné-Bébé / Une séance pour les jeunes parents, avec leur bébé de 0 à 7 mois.**
+   - Dates : 2025-09-18
+   - Ville : Bègles
+   - URL : [Lien](https://openagenda.com/ville-de-bordea",6,0.8333333333333334,0.8413945475154184,4,d0131c841f9645ca98ee22d79f90f0a9,v2,v2_1,mistral-small-latest,artifacts\faiss_index_mistral
+Je cherche une activité accessible en transports en commun à Bordeaux (à venir si possible).,"Je n'ai pas trouvé d'activités à venir à Bordeaux dans les 30 prochains jours. Voici quelques événements passés qui pourraient vous inspirer pour des activités similaires à l'avenir :
+
+1. **Table ronde : Une ville végétalisée pour mieux se déplacer**
+   - Dates : 2025-09-17
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/table-ronde-une-ville-vegetalisee-pour-mieux-se-deplacer)
+
+2. **Matinée talents pour tous les voisins, petits comme grands**
+   - Dates : 2025-07-26
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/matinee-talents-pour-tous-les-voisins-petits-comme-grands)
+
+3. **En faire des tartines : Atelier cuisine (Festival BON!)**
+   - Dates : 2025-10-17
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/en-faire-des-tartines-atelier-cuisine)
+
+4. **Balade urbaine ESS : ""Le tissu solidaire de Saint-Michel"" (forum du GSEF)**
+   - Dates : 2025-10-29
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/balade-urbaine-ess-le-tissu-solidaire-de-saint-michel-forum-du-gsef)
+
+Source",6,0.6,0.7891598744435676,4,547ccaa08ed44b52b0e32038600aabc3,v2,v2_1,mistral-small-latest,artifacts\faiss_index_mistral
+Je cherche un événement en journée à Bordeaux (à venir si possible).,"Je n'ai pas trouvé d'événements en journée à Bordeaux dans les 30 prochains jours. Voici quelques événements passés qui pourraient vous inspirer pour des activités similaires à l'avenir :
+
+1. **Matinée talents pour tous les voisins, petits comme grands**
+   - Dates : 2025-07-26
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/matinee-talents-pour-tous-les-voisins-petits-comme-grands)
+
+2. **Visite guidée architecturale**
+   - Dates : 2025-04-27
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/visite-guidee-architecturale-1744065)
+
+3. **Journée d'animations pour tous !**
+   - Dates : 2025-06-08
+   - Ville : Cadillac-sur-Garonne
+   - URL : [Lien](https://openagenda.com/rdvj-2025-nouvelle-aquitaine/events/journee-danimations-pour-tous)
+
+Sources: [S1], [S4], [S5]",6,0.5,0.8817617814877488,4,5df363a7a5de4dac89ac64e05b4d7b05,v2,v2_1,mistral-small-latest,artifacts\faiss_index_mistral
+Je cherche un événement le matin à Bordeaux (à venir si possible).,"Je n'ai pas trouvé d'événements en journée à Bordeaux dans les 30 prochains jours. Voici quelques événements passés qui pourraient vous inspirer pour des activités similaires à l'avenir :
+
+1. **Matinée talents pour tous les voisins, petits comme grands**
+   - Dates : 2025-07-26
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/matinee-talents-pour-tous-les-voisins-petits-comme-grands)
+
+2. **Brunch Scène ouverte et mâtinée talent**
+   - Dates : 2025-10-25
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/brunch-scene-ouverte-et-matinee-talent)
+
+Sources: [S1], [S2]",6,0.8,0.8709570520811832,4,5912751d152940f5904a72901897c06f,v2,v2_1,mistral-small-latest,artifacts\faiss_index_mistral
+Je cherche une activité le dimanche à Bordeaux (à venir si possible).,"Je n'ai pas trouvé d'événements le dimanche à Bordeaux dans les 30 prochains jours. Voici quelques événements passés qui pourraient vous inspirer pour des activités similaires à l'avenir :
+
+1. **Matinée talents pour tous les voisins, petits comme grands**
+   - Dates : 2025-07-26
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/matinee-talents-pour-tous-les-voisins-petits-comme-grands)
+
+2. **La Fresque des possibles**
+   - Dates : 2025-10-02
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/la-fresque-des-possibles-6498712)
+
+3. **En faire des tartines : Atelier cuisine (Festival BON!)**
+   - Dates : 2025-10-17
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/en-faire-des-tartines-atelier-cuisine)
+
+Sources: [S1], [S5], [S6]",6,0.25,0.8628320716166225,4,79e2512df1924d64b1274c37bd2d74bb,v2,v2_1,mistral-small-latest,artifacts\faiss_index_mistral
+Quels événements y avait-il à Bordeaux en 2025 ? Donne-moi 5 exemples.,"Voici 5 événements qui ont eu lieu à Bordeaux en 2025 :
+
+1. **Fête de la Sciences 2025**
+   - Dates : 2025-10-03 → 2025-10-13
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/fete-de-la-sciences-2025)
+
+2. **Festi'Run 2025**
+   - Dates : 2025-06-06
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/festirun-2025)
+
+3. **Fête de fin d'année ""Avoir 20 ans""**
+   - Dates : 2025-07-08
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/fete-de-fin-dannee-avoir-20-ans)
+
+4. **Causerie d'histoire : les 80 ans de la 2nde Guerre mondiale**
+   - Dates : 2025-05-23
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/causerie-dhistoire-les-80-ans-de-la-2nde-guerre-mondiale-3842919)
+
+5. **ANNULÉ - Rencontre avec Edouard Louis**
+   - Dates : 2025-10-02
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/rencontre-avec-edouard-louis-3803632)
+
+Sources: [S1], [S2], [S3], [S4], [S6]",6,0.8,0.919774968578102,4,5f2f8beb22234adc97c6d19d92cf226c,v2,v2_1,mistral-small-latest,artifacts\faiss_index_mistral
+Quels événements culturels y avait-il à Bordeaux en octobre 2025 ?,"Voici un événement culturel qui a eu lieu à Bordeaux en octobre 2025 :
+
+1. **Fête de la Sciences 2025**
+   - Dates : 2025-10-03 → 2025-10-13
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/fete-de-la-sciences-2025)
+
+Sources: [S1]",6,1.0,0.9340421038463873,4,a3375241af98485789598e4dfbd62af6,v2,v2_1,mistral-small-latest,artifacts\faiss_index_mistral
+"En 2025, quels événements liés à la cuisine ou l’alimentation étaient proposés à Bordeaux ?","Voici 4 événements liés à la cuisine ou à l'alimentation qui ont eu lieu à Bordeaux en 2025 :
+
+1. **En faire des tartines : Atelier cuisine (Festival BON!)**
+   - Dates : 2025-10-17
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/en-faire-des-tartines-atelier-cuisine)
+
+2. **Les secrets végé de Céline : Atelier cuisine (Festival BON!)**
+   - Dates : 2025-10-14
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/les-secrets-vege-de-celine-atelier-cuisine)
+
+3. **Tout rond, tout bon : Atelier alimentation et allaitement (Festival BON!)**
+   - Dates : 2025-10-14
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/tout-rond-tout-bon-atelier-alimentation-et-allaitement)
+
+4. **La main à la pâte : Atelier cuisine (Festival BON!)**
+   - Dates : 2025-10-15
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/la-main-a-la-pate-atelier-cuisine)
+
+Sources: [S1], [S4], [S5], [S6]",6,0.5833333333333334,0.952869844808736,4,921c1f5adaaa478e9f2e92744e6950aa,v2,v2_1,mistral-small-latest,artifacts\faiss_index_mistral
+"En 2025, quels événements sur l’histoire étaient proposés à Bordeaux ?","Voici 4 événements sur l’histoire qui ont été proposés à Bordeaux en 2025 :
+
+1. **Causerie d'histoire : les 80 ans de la 2nde Guerre mondiale**
+   - Dates : 2025-05-23
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/causerie-dhistoire-les-80-ans-de-la-2nde-guerre-mondiale-3842919)
+
+2. **Plongez au cœur de l’histoire de Bordeaux : visite libre et parcours guidés sur demande pour découvrir son riche patrimoine maritime !**
+   - Dates : 2025-05-17
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ndm-2025-nouvelle-aquitaine/events/plongez-au-coeur-de-lhistoire-de-bordeaux-visite-libre-et-parcours-guides-sur-demande-pour-decouvrir-son-riche-patrimoine-maritime)
+
+3. **Parcours Histoire de l'art par les étudiants**
+   - Dates : 2025-05-17
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ndm-2025-nouvelle-aquitaine/events/parcours-histoire-de-lart-par-les-etudiants-2759632)
+
+4. **Causerie d'histoire : La bataille du Rio de la Plata**
+   - Dates : 2025-07-18
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/causerie-dhistoire-la-bataille-du-rio-de-la-plata)
+
+",6,1.0,0.949538021665098,4,5a0189f7b09141fb9736798cd82587e3,v2,v2_1,mistral-small-latest,artifacts\faiss_index_mistral
+"En 2025, quels événements familiaux étaient proposés à Bordeaux ?","Voici 4 événements familiaux qui ont eu lieu à Bordeaux en 2025 :
+
+1. **Fête de la Sciences 2025**
+   - Dates : 2025-10-03 → 2025-10-13
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/fete-de-la-sciences-2025)
+
+2. **Festi'Run 2025**
+   - Dates : 2025-06-06
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/festirun-2025)
+
+3. **Atelier famille**
+   - Dates : 2025-05-17
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ndm-2025-nouvelle-aquitaine/events/atelier-famille-9899849)
+
+4. **Visite famille**
+   - Dates : 2025-05-17
+   - Ville : Bordeaux
+   - URL : [Lien](https://openagenda.com/ndm-2025-nouvelle-aquitaine/events/visite-famille-9858520)
+
+Sources: [S1], [S2], [S4], [S5]",6,0.75,0.9376312793694718,4,4a8302ffac1e4634a9165cc463fd0639,v2,v2_1,mistral-small-latest,artifacts\faiss_index_mistral

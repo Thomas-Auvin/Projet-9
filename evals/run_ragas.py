@@ -1,4 +1,5 @@
 from __future__ import annotations
+
 from pathlib import Path
 
 import argparse
@@ -6,17 +7,16 @@ import json
 import os
 from datetime import datetime, timezone
 
+import math
 import pandas as pd
 from dotenv import load_dotenv
-
-from rag.embeddings import get_mistral_embeddings
-from rag.engine import RagEngine
-
-from ragas.metrics.collections import AnswerRelevancy, Faithfulness
 from openai import AsyncOpenAI
-from ragas.llms import llm_factory
 from ragas.embeddings import OpenAIEmbeddings
-import math
+from ragas.llms import llm_factory
+from ragas.metrics.collections import AnswerRelevancy, Faithfulness
+
+from rag.preparation.embeddings import get_mistral_embeddings
+from rag.moteur.engine import RagEngine
 
 
 def find_root() -> Path:
@@ -71,6 +71,14 @@ def main() -> None:
     print("Loaded questions:", len(questions))
     print("First 3:", questions[:3])
 
+    # --- Prompt controls (driven by env) ---
+    prompt_variant_env = os.environ.get("P9_PROMPT_VARIANT", "v2")
+    prompt_version_env = os.environ.get("P9_PROMPT_VERSION", "v2_1")
+    debug_prompt = os.environ.get("P9_DEBUG_PROMPT", "0")
+    print(
+        f"Prompt: variant={prompt_variant_env} version={prompt_version_env} debug={debug_prompt}"
+    )
+
     # --- Init your RAG engine (same config as the API) ---
     index_dir = Path(os.environ.get("P9_INDEX_DIR", "artifacts/faiss_index_mistral"))
     processed_csv = Path(
@@ -101,9 +109,8 @@ def main() -> None:
     client = AsyncOpenAI(api_key=mistral_key, base_url=base_url)
 
     judge_model = os.getenv("P9_RAGAS_JUDGE_MODEL", "mistral-small-latest")
-    embed_model = os.getenv("MISTRAL_EMBED_MODEL", "mistral-embed")
 
-    # LLM "juge" moderne (InstructorLLM) requis par les metrics collections
+    # LLM "juge" moderne requis par les metrics collections
     judge_max_tokens = int(os.getenv("P9_RAGAS_MAX_TOKENS", "4096"))
 
     judge_llm = llm_factory(
@@ -134,10 +141,12 @@ def main() -> None:
         ctxs = res.get("retrieved_contexts", [])
         if not isinstance(ctxs, list):
             ctxs = []
+
         # Réduire la charge du juge (très utile)
         max_ctx = int(os.getenv("P9_RAGAS_MAX_CONTEXTS", "4"))
         max_chars = int(os.getenv("P9_RAGAS_MAX_CONTEXT_CHARS", "1200"))
         ctxs = [c[:max_chars] for c in ctxs[:max_ctx]]
+
         ans = res.get("answer", "")
         max_ans_chars = int(os.getenv("P9_RAGAS_MAX_ANSWER_CHARS", "1200"))
         ans = ans[:max_ans_chars]
@@ -165,12 +174,19 @@ def main() -> None:
                 "answer_relevancy": ar,
                 "n_contexts": len(ctxs),
                 "turn_id": res.get("turn_id"),
+                # NEW: prompt tracking
+                "prompt_variant": res.get("prompt_variant", prompt_variant_env),
+                "prompt_version": res.get("prompt_version", prompt_version_env),
+                # Useful meta
+                "chat_model": res.get("model", chat_model),
+                "index_dir": str(index_dir),
             }
         )
 
     df = pd.DataFrame(rows)
     stamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
-    out_csv = outdir / f"ragas_eval_{stamp}.csv"
+    safe_variant = (prompt_variant_env or "v2").replace("/", "-")
+    out_csv = outdir / f"ragas_eval_{safe_variant}_{stamp}.csv"
     df.to_csv(out_csv, index=False, encoding="utf-8")
 
     print("Saved:", out_csv)
