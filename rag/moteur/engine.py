@@ -14,6 +14,8 @@ from zoneinfo import ZoneInfo
 from dotenv import load_dotenv
 from mistralai import Mistral
 
+from rag.moteur.prompting import build_prompt
+from rag.moteur.rag_chain import _mistral_chat, build_context
 from rag.preparation.indexing import (
     SplitConfig,
     build_faiss_index,
@@ -22,8 +24,6 @@ from rag.preparation.indexing import (
     load_processed_events,
     split_documents,
 )
-from rag.moteur.rag_chain import _mistral_chat, build_context
-
 
 _tz_name = os.environ.get("P9_TZ", "Europe/Paris")
 try:
@@ -260,7 +260,9 @@ class RagEngine:
                 )
             else:
                 docs = docs[:kk]
-                time_guidance = "La question porte sur le passé. Tu peux proposer des événements passés correspondant à la demande."
+                time_guidance = (
+                    "La question porte sur le passé. Tu peux proposer des événements passés correspondant à la demande."
+                )
 
         else:
             docs = docs[:kk]
@@ -278,35 +280,28 @@ class RagEngine:
         # --- Conversation continuity (last N turns) ---
         history_text = self._format_history_for_prompt()
 
-        # --- Bonus prompt: reference date + clear time behavior ---
-        reference_line = f"DATE_DE_REFERENCE (Europe/Paris): {now_paris.isoformat()}"
-        intent_line = f"INTENTION_TEMPORELLE: {intent}"
+        # --- Prompt building (centralisé) ---
+        prompt_variant = os.environ.get("P9_PROMPT_VARIANT", "v2")
 
-        system = (
-            "Tu es un assistant culturel. "
-            "Règles: "
-            "1) Réponds uniquement avec les informations du CONTEXTE (événements/sources). "
-            "2) Tu peux utiliser l'HISTORIQUE uniquement pour comprendre les questions de suivi "
-            "(ex: 'et demain', 'dans la même ville', préférences), mais jamais comme source factuelle d'événements. "
-            "3) Respecte la DATE_DE_REFERENCE pour interpréter les expressions relatives (ex: 'ce week-end', 'demain'). "
-            "4) Applique les CONTRAINTES_TEMPS si elles sont fournies. "
-            "5) Propose au maximum 5 recommandations. "
-            "6) Pour chaque recommandation, donne le titre, les date(s), la ville et l'URL. "
-            "7) Termine par 'Sources:' avec les identifiants [S1], [S2]..."
+        prompt = build_prompt(
+            variant=prompt_variant,
+            question=q,
+            context_text=context_text,
+            now_ref=now_paris,
+            intent=intent,
+            time_guidance=time_guidance,
+            history_text=history_text,
         )
 
-        user_parts: list[str] = [reference_line, intent_line]
-        if time_guidance:
-            user_parts.append(f"CONTRAINTES_TEMPS: {time_guidance}")
-        if history_text:
-            user_parts.append(f"HISTORIQUE (dern. échanges):\n{history_text}")
-        user_parts.append(f"QUESTION:\n{q}")
-        user_parts.append(f"CONTEXTE:\n{context_text}")
-        user_parts.append("RÉPONSE:")
-        user = "\n\n".join(user_parts)
+        # Print prompt complet (visible dans logs Docker / uvicorn) si activé
+        if os.environ.get("P9_DEBUG_PROMPT", "0") == "1":
+            print(prompt.as_text())
 
         answer = _mistral_chat(
-            self._client, model=self.chat_model, system=system, user=user
+            self._client,
+            model=self.chat_model,
+            system=prompt.system,
+            user=prompt.user,
         )
 
         turn_id = uuid4().hex
@@ -320,6 +315,8 @@ class RagEngine:
             "model": self.chat_model,
             "rating": None,
             "retrieved_contexts": retrieved_contexts,
+            "prompt_variant": prompt.variant,
+            "prompt_version": prompt.version,
         }
 
         # --- Store a light version in history (avoid huge memory + /history payloads) ---
