@@ -92,6 +92,10 @@ L’API lit ces variables au démarrage :
 
 Pour remplis la clé mistral, il est nécessaire de s'inscrire et de demander une clé sur l'application Mistral à l'adresse suivante : https://admin.mistral.ai/organization/api-keys
 
+## Rapport technique
+L'ensemble des détails techniques (architecture, choix techniques, évaluation ...) est disponible ici :  
+➡️ [Rapport technique](rapport_technique.md)
+
 ### Tests & Qualité
 
 Pour toutes modifications du code, la branche main est protégé.
@@ -104,9 +108,12 @@ uv run ruff format --check .
 uv run pytest -q
 ```
 
-### Évaluation (RAGAS)
+### Évaluation (RAGAS + Golden accuracy)
 
-Un script d’évaluation existe dans evals/. Pour le lancer il faut faire la commande suivante :
+Le script `evals/run_ragas.py` calcule en une seule exécution :
+- **RAGAS** : `faithfulness`, `answer_relevancy` (qualité de génération)
+- **Golden accuracy** : `hit@k`, `precision@k`, `recall@k`, `MRR` (qualité du retrieval),
+  en comparant `expected_source_ids` (golden) avec `sources[].id` renvoyés par l’API (IDs = `event_id`).
 
 ```bash
 PYTHONPATH=. P9_PROMPT_VARIANT=v2 P9_PROMPT_VERSION=v2_2 \
