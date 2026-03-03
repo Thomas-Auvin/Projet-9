@@ -1,0 +1,120 @@
+@startuml
+title Projet 9 — Architecture RAG (API + Index + CI/Docker)
+left to right direction
+skinparam componentStyle rectangle
+skinparam shadowing false
+
+actor "Utilisateur" as User
+
+cloud "GitHub (repo)" as GitHub
+node "GitHub Actions (CI)" as CI {
+  component "uv sync / uv run" as CI_UV
+  component "ruff format/check" as CI_Ruff
+  component "pytest" as CI_Pytest
+  component "docker build" as CI_Docker
+}
+
+cloud "Mistral API" as Mistral {
+  component "Chat Completions\n(LLM)" as MistralChat
+  component "Embeddings\n(mistral-embed)" as MistralEmb
+}
+
+node "Machine dev (Windows/macOS/Linux)" as Dev {
+  component "uv\n(env + runner)" as UV
+  component "Python 3.x" as Py
+
+  package "Scripts" {
+    component "Indexation\nscripts/build_index.py" as BuildIndex
+    component "CLI demo\nscripts/ask_rag.py" as AskCLI
+  }
+
+  package "Évaluation" {
+    component "RAGAS + Golden accuracy\n(evals/run_ragas.py)" as Eval
+  }
+}
+
+node "Docker Host" as Host {
+  node "Container: p9-api\n(Uvicorn + FastAPI)" as Ctn {
+    component "FastAPI app\n(app/main.py)" as API
+    component "RagEngine\n(rag/moteur/engine.py)" as Engine
+    component "Prompting\n(rag/moteur/prompting.py)" as Prompt
+    component "Retriever\n(FAISS search)" as Retriever
+    component "Embeddings client\n(get_mistral_embeddings)" as EmbedClient
+    component "Mistral chat wrapper\n(rag/moteur/rag_chain.py)" as ChatClient
+  }
+
+  database "Volume artifacts\n/app/artifacts\nFAISS index (fichiers)" as VolArtifacts
+  database "Volume data\n/app/data\nCSV processed" as VolData
+  database "Volume outputs\n/app/outputs\nfeedback.jsonl / exports" as VolOutputs
+}
+
+' -------------------------
+' CI / Repo
+' -------------------------
+GitHub --> CI : push / PR
+CI --> CI_UV
+CI_UV --> CI_Ruff : lint/format
+CI_UV --> CI_Pytest : tests
+CI --> CI_Docker : build image (Dockerfile)
+
+' -------------------------
+' Runtime API (Docker)
+' -------------------------
+User --> API : HTTP\n/health /ask /feedback
+API --> Engine : ask(question)
+Engine --> Retriever : top-k search
+Retriever --> VolArtifacts : read FAISS index (file-based)
+Engine --> VolData : read events_processed_geo.csv\n(metadata / fields)
+Engine --> EmbedClient : embed(query)
+EmbedClient --> MistralEmb : /embeddings
+Engine --> Prompt : build prompt\n(question + contexts)
+Engine --> ChatClient : generate answer
+ChatClient --> MistralChat : /chat.completions
+API --> VolOutputs : append feedback.jsonl\n(POST /feedback)
+
+' -------------------------
+' Indexation (dev)
+' -------------------------
+UV --> Py
+Py --> BuildIndex : uv run python ...
+BuildIndex --> VolData : read processed CSV\n(source events)
+BuildIndex --> VolArtifacts : write FAISS index\n(artifacts/...)
+
+AskCLI --> Engine : local call (optional)
+AskCLI --> VolArtifacts : load index
+AskCLI --> VolData : load metadata
+
+' -------------------------
+' Évaluation (dev)
+' -------------------------
+Eval --> Engine : engine.ask() (1x/question)
+Eval --> MistralChat : juge RAGAS\n(faithfulness/relevancy)
+Eval --> MistralEmb : embeddings juge (RAGAS)
+note right of Eval
+Golden set (JSONL) compare :
+expected_source_ids == sources[].id (event_id)
+=> hit@k / precision@k / recall@k / MRR
+end note
+
+' -------------------------
+' Docker volumes notes
+' -------------------------
+note right of VolArtifacts
+Bind mount (ex) :
+./artifacts -> /app/artifacts
+P9_INDEX_DIR=/app/artifacts/faiss_index_mistral
+end note
+
+note right of VolData
+Bind mount (ex) :
+./data -> /app/data
+P9_PROCESSED_CSV=/app/data/processed/events_processed_geo.csv
+end note
+
+note right of VolOutputs
+Bind mount (ex) :
+./outputs -> /app/outputs
+Feedback JSONL + exports d'éval
+end note
+
+@enduml
