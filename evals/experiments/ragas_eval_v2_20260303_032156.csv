@@ -1,0 +1,133 @@
+question,answer,k,faithfulness,answer_relevancy,n_contexts,turn_id,prompt_variant,prompt_version,chat_model,judge_model,index_dir,processed_csv,golden_used,gold_min_expected_matches,gold_n_expected,gold_n_hit,gold_hit_at_k,gold_precision_at_k,gold_recall_at_k,gold_mrr,gold_pass_min_matches
+"En 2025, quel événement à Bordeaux met à l'honneur l'entrepreneuriat et l'innovation technologique et inclut aussi un « Fund Connect » ? Donne le lieu et la date.","- **Titre:** Bordeaux Tech'Day + Fund Connect
+  **Dates:** 2025-06-03
+  **Ville:** Bordeaux
+  **URL:** [https://openagenda.com/kestocal-agenda-collaboratif-evenements-supply-chain-france/events/bordeaux-techday-fund-connect-9236098](https://openagenda.com/kestocal-agenda-collaboratif-evenements-supply-chain-france/events/bordeaux-techday-fund-connect-9236098)
+
+Sources: [72387367]",6,1.0,0.8629999574071805,4,08d7bf5601b74d93ae17bfdcab608bf4,v2,v2_1,mistral-small-latest,mistral-small-latest,C:\Users\thoma\Documents\Openclassroom\Projet-9\artifacts\faiss_index_mistral,C:\Users\thoma\Documents\Openclassroom\Projet-9\data\processed\events_processed_geo.csv,True,1,1.0,1.0,1.0,0.16666666666666666,1.0,1.0,1.0
+"Le 17 mai 2025 à Bordeaux, quel atelier mêle art et écologie au FRAC MÉCA ? Donne la date et le lieu.","**Atelier art et écologie**
+- **Date**: 17 mai 2025
+- **Lieu**: FRAC MÉCA, Bordeaux
+- **URL**: [https://openagenda.com/ndm-2025-nouvelle-aquitaine/events/atelier-art-et-ecologie](https://openagenda.com/ndm-2025-nouvelle-aquitaine/events/atelier-art-et-ecologie)
+
+Sources: [63767845]",6,1.0,0.8175884479800789,4,f2e5d85ff9a34f2c920be1a2e38859d0,v2,v2_1,mistral-small-latest,mistral-small-latest,C:\Users\thoma\Documents\Openclassroom\Projet-9\artifacts\faiss_index_mistral,C:\Users\thoma\Documents\Openclassroom\Projet-9\data\processed\events_processed_geo.csv,True,1,1.0,1.0,1.0,0.16666666666666666,1.0,1.0,1.0
+Quel concert de Babylon Circus est programmé à Bordeaux à la Rock School Barbey le 28 novembre 2025 ? Donne la date et le lieu.,"Le concert de Babylon Circus programmé à Bordeaux à la Rock School Barbey le 28 novembre 2025 est :
+
+- **Titre:** Babylon Circus
+- **Date:** 2025-11-28
+- **Ville:** Bordeaux
+- **URL:** [Babylon Circus](https://openagenda.com/ville-de-bordeaux-contributeurs/events/babylon-circus-4910730)
+
+Sources: [40253151]",6,1.0,0.8877270456512362,4,4dd1c9eb392c4ca08a3d057ef6d59318,v2,v2_1,mistral-small-latest,mistral-small-latest,C:\Users\thoma\Documents\Openclassroom\Projet-9\artifacts\faiss_index_mistral,C:\Users\thoma\Documents\Openclassroom\Projet-9\data\processed\events_processed_geo.csv,True,1,1.0,1.0,1.0,0.16666666666666666,1.0,1.0,1.0
+"Je cherche la soirée « Wine, Food & Rock Session » avec Laura-Mary Carter à Bordeaux en 2025 : quand et où a-t-elle lieu ?","La soirée « Wine, Food & Rock Session » avec Laura-Mary Carter à Bordeaux en 2025 a lieu le 19 juin 2025 de 19h00 à 21h50 au Rock School Barbey.
+
+Sources:
+[26438643]",6,0.6666666666666666,0.9072229155481054,4,76eabd6acf494a0aa187c62a7893974f,v2,v2_1,mistral-small-latest,mistral-small-latest,C:\Users\thoma\Documents\Openclassroom\Projet-9\artifacts\faiss_index_mistral,C:\Users\thoma\Documents\Openclassroom\Projet-9\data\processed\events_processed_geo.csv,True,1,1.0,1.0,1.0,0.16666666666666666,1.0,1.0,1.0
+"Dans le cadre de la Semaine des Métiers du Tourisme 2025, quel événement de visite + job dating pour des réceptionnistes a lieu à Bordeaux le 18 mars 2025 ?","Voici l'événement de visite et job dating pour des réceptionnistes à Bordeaux le 18 mars 2025 dans le cadre de la Semaine des Métiers du Tourisme 2025 :
+
+- **Titre**: Visite et Job dating à l'hôtel Victoria Garden : Réceptionnistes
+- **Dates**: 2025-03-18T09:00:00+00:00 → 2025-03-18T11:30:00+00:00
+- **Ville**: Bordeaux
+- **URL**: [Visite et Job dating à l'hôtel Victoria Garden : Réceptionnistes](https://openagenda.com/semaine-des-metiers-du-tourisme/events/visite-et-job-dating-a-lhotel-victoria-garden-receptionnistes)
+
+Sources: [95060011]",6,0.8,0.8737319334809568,4,bb91e10845d841ddab69a6c0348804c0,v2,v2_1,mistral-small-latest,mistral-small-latest,C:\Users\thoma\Documents\Openclassroom\Projet-9\artifacts\faiss_index_mistral,C:\Users\thoma\Documents\Openclassroom\Projet-9\data\processed\events_processed_geo.csv,True,1,1.0,1.0,1.0,0.16666666666666666,1.0,1.0,1.0
+"Quel congrès « 14th World Filtration Congress » se tient à Bordeaux entre le 30 juin et le 4 juillet 2025, et où exactement ?","Le congrès ""14th World Filtration Congress"" se tient à Bordeaux au Palais des Congrès entre le 30 juin et le 4 juillet 2025.
+
+Sources: [79020812]",6,1.0,0.8693534871487453,4,9274da5a137f44aab8d3cd6f35da405e,v2,v2_1,mistral-small-latest,mistral-small-latest,C:\Users\thoma\Documents\Openclassroom\Projet-9\artifacts\faiss_index_mistral,C:\Users\thoma\Documents\Openclassroom\Projet-9\data\processed\events_processed_geo.csv,True,1,1.0,1.0,1.0,0.16666666666666666,1.0,1.0,1.0
+"Quel atelier sur l'alimentation pendant la grossesse et l'allaitement (Festival BON!) est programmé à Bordeaux le 14 octobre 2025, et dans quel lieu ?","- **Titre:** Tout rond, tout bon : Atelier alimentation et allaitement (Festival BON!)
+- **Dates:** 2025-10-14T12:00:00+00:00 → 2025-10-14T14:00:00+00:00
+- **Ville:** Bordeaux
+- **Lieu:** La ManuCo
+- **URL:** [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/tout-rond-tout-bon-atelier-alimentation-et-allaitement)
+
+Sources: [85073559]",6,0.8,0.7999546930146568,4,e543bf83d1a441b1b80343e4663ee45d,v2,v2_1,mistral-small-latest,mistral-small-latest,C:\Users\thoma\Documents\Openclassroom\Projet-9\artifacts\faiss_index_mistral,C:\Users\thoma\Documents\Openclassroom\Projet-9\data\processed\events_processed_geo.csv,True,1,1.0,1.0,1.0,0.16666666666666666,1.0,1.0,1.0
+Quel concert de Stereolab est prévu à Bordeaux à la Rock School Barbey le 5 juin 2025 ? Donne la date et le lieu.,"Le concert de Stereolab prévu à la Rock School Barbey à Bordeaux le 5 juin 2025 a lieu le 2025-06-05 de 18h30 à 21h50.
+
+Sources:
+[22134350]",6,0.75,0.8663038122707922,4,f46c412478dc481bb41acbd8dbe9b4a4,v2,v2_1,mistral-small-latest,mistral-small-latest,C:\Users\thoma\Documents\Openclassroom\Projet-9\artifacts\faiss_index_mistral,C:\Users\thoma\Documents\Openclassroom\Projet-9\data\processed\events_processed_geo.csv,True,1,1.0,1.0,1.0,0.16666666666666666,1.0,1.0,1.0
+Quel concert de Kadavar a lieu à Bordeaux le 15 octobre 2025 à la Rock School Barbey ?,"Le concert de Kadavar à Bordeaux le 15 octobre 2025 à la Rock School Barbey est :
+
+- **Titre:** Kadavar
+- **Dates:** 2025-10-15T18:00:00+00:00 → 2025-10-15T21:50:00+00:00
+- **Ville:** Bordeaux
+- **URL:** [Kadavar](https://openagenda.com/ville-de-bordeaux-contributeurs/events/kadavar)
+
+Sources:
+[61779547]",6,0.75,0.8301002436241509,4,252e8d817331457a8cf850ff8d247ec5,v2,v2_1,mistral-small-latest,mistral-small-latest,C:\Users\thoma\Documents\Openclassroom\Projet-9\artifacts\faiss_index_mistral,C:\Users\thoma\Documents\Openclassroom\Projet-9\data\processed\events_processed_geo.csv,True,1,1.0,1.0,1.0,0.16666666666666666,1.0,1.0,1.0
+Quel concert de Still Fresh est programmé à Bordeaux à la Rock School Barbey le 22 novembre 2025 ?,"Le concert de Still Fresh programmé à la Rock School Barbey à Bordeaux le 22 novembre 2025 est le suivant :
+
+- **Titre**: Still Fresh
+- **Dates**: 2025-11-22T19:30:00+00:00 → 2025-11-22T22:55:00+00:00
+- **Ville**: Bordeaux
+- **URL**: [Still Fresh](https://openagenda.com/ville-de-bordeaux-contributeurs/events/still-fresh)
+
+Sources: [17876083]",6,0.8,0.8957466465533467,4,6f8a2ebe589949869d5afe661e0b92b4,v2,v2_1,mistral-small-latest,mistral-small-latest,C:\Users\thoma\Documents\Openclassroom\Projet-9\artifacts\faiss_index_mistral,C:\Users\thoma\Documents\Openclassroom\Projet-9\data\processed\events_processed_geo.csv,True,1,1.0,1.0,1.0,0.16666666666666666,1.0,1.0,1.0
+"Le 7 juin 2025, quel événement solidaire « 1 don = 1 coup de pouce aux agriculteurs » est organisé au U Express Bordeaux Capucins ?","Le 7 juin 2025, l'événement solidaire « 1 don = 1 coup de pouce aux agriculteurs » organisé au U Express Bordeaux Capucins est :
+
+- **Titre**: Célébrons les Producteurs de chez nous au U Express Bordeaux Capucins
+- **Date**: 2025-06-07
+- **Ville**: Bordeaux
+- **URL**: [https://openagenda.com/jna2025/events/celebrons-les-producteurs-de-chez-nous-au-u-express-bordeaux-capucins-9876017](https://openagenda.com/jna2025/events/celebrons-les-producteurs-de-chez-nous-au-u-express-bordeaux-capucins-9876017)
+
+Sources: [57571484]",6,1.0,0.8778167050668282,4,ec29a9439b184215838869d0d1ec3d8d,v2,v2_1,mistral-small-latest,mistral-small-latest,C:\Users\thoma\Documents\Openclassroom\Projet-9\artifacts\faiss_index_mistral,C:\Users\thoma\Documents\Openclassroom\Projet-9\data\processed\events_processed_geo.csv,True,1,1.0,1.0,1.0,0.16666666666666666,1.0,1.0,1.0
+"Lors de la Nuit des Musées 2025, quelle visite libre gratuite de l'exposition permanente est proposée à la Cité du Vin à Bordeaux le 17 mai 2025 ?","**Visite libre de l'Exposition permanente**
+- **Dates:** 2025-05-17T16:00:00+00:00 → 2025-05-17T21:30:00+00:00
+- **Ville:** Bordeaux
+- **URL:** [Visite libre de l'Exposition permanente](https://openagenda.com/ndm-2025-nouvelle-aquitaine/events/visite-libre-de-lexposition-permanente-5790633)
+
+Sources: [88449434]",6,0.75,0.7914118969562592,4,13bccaae706f4d05ad9a0a33b1f7e78e,v2,v2_1,mistral-small-latest,mistral-small-latest,C:\Users\thoma\Documents\Openclassroom\Projet-9\artifacts\faiss_index_mistral,C:\Users\thoma\Documents\Openclassroom\Projet-9\data\processed\events_processed_geo.csv,True,1,1.0,1.0,1.0,0.16666666666666666,1.0,1.0,1.0
+"Le 17 mai 2025 à Bordeaux, quel « Parcours Histoire de l'art » est animé par des étudiants au Musée des beaux-arts ?","- **Parcours Histoire de l'art par les étudiants**
+  - **Dates:** 2025-05-17
+  - **Ville:** Bordeaux
+  - **URL:** [https://openagenda.com/ndm-2025-nouvelle-aquitaine/events/parcours-histoire-de-lart-par-les-etudiants-2759632](https://openagenda.com/ndm-2025-nouvelle-aquitaine/events/parcours-histoire-de-lart-par-les-etudiants-2759632)
+
+Sources: [96802562]",6,1.0,0.850839568159976,4,2898b43b7d5d4c84b923dc57b252f0e3,v2,v2_1,mistral-small-latest,mistral-small-latest,C:\Users\thoma\Documents\Openclassroom\Projet-9\artifacts\faiss_index_mistral,C:\Users\thoma\Documents\Openclassroom\Projet-9\data\processed\events_processed_geo.csv,True,1,1.0,1.0,1.0,0.16666666666666666,1.0,1.0,1.0
+Quel événement « Café mobile : café rap » est proposé à Bordeaux le 7 mai 2025 au Parc des sports Saint-Michel ? Donne la date et le lieu.,"L'événement « Café mobile : café rap » est proposé à Bordeaux le 7 mai 2025 au Parc des sports Saint-Michel.
+
+- **Titre**: Café mobile : café rap
+- **Date**: 2025-05-07
+- **Lieu**: Parc des sports Saint-Michel, Bordeaux
+- **URL**: [https://openagenda.com/ville-de-bordeaux-contributeurs/events/cafe-mobile-cafe-rap](https://openagenda.com/ville-de-bordeaux-contributeurs/events/cafe-mobile-cafe-rap)
+
+Sources: [6897583]",6,1.0,0.8458977462735531,4,186e9cb5d7af481a8086a8f95178a10f,v2,v2_1,mistral-small-latest,mistral-small-latest,C:\Users\thoma\Documents\Openclassroom\Projet-9\artifacts\faiss_index_mistral,C:\Users\thoma\Documents\Openclassroom\Projet-9\data\processed\events_processed_geo.csv,True,1,1.0,1.0,1.0,0.16666666666666666,1.0,1.0,1.0
+Quel « Atelier des Sols vivants » a lieu à Bordeaux le 13 mai 2025 à La ManuCo ?,"- **Atelier des Sols vivants**
+  - **Dates**: 2025-05-13
+  - **Ville**: Bordeaux
+  - **URL**: [Lien](https://openagenda.com/ville-de-bordeaux-contributeurs/events/atelier-des-sols-vivants-9253765)
+
+Sources: [59397011]",6,1.0,0.7900280807420725,4,2a48e4eb66b04c36910b8a6b77951349,v2,v2_1,mistral-small-latest,mistral-small-latest,C:\Users\thoma\Documents\Openclassroom\Projet-9\artifacts\faiss_index_mistral,C:\Users\thoma\Documents\Openclassroom\Projet-9\data\processed\events_processed_geo.csv,True,1,1.0,1.0,1.0,0.16666666666666666,1.0,1.0,1.0
+Quel atelier d'écriture « La Manucoplume » est organisé à Bordeaux à La ManuCo le 2 juillet 2025 ?,"Voici l'atelier d'écriture « La Manucoplume » organisé à Bordeaux à La ManuCo le 2 juillet 2025 :
+
+- **Titre**: Atelier d'écriture : La Manucoplume
+- **Dates**: 2025-07-02T15:30:00+00:00 → 2025-07-02T17:00:00+00:00
+- **Ville**: Bordeaux
+- **URL**: [https://openagenda.com/ville-de-bordeaux-contributeurs/events/atelier-decriture-la-manucoplume](https://openagenda.com/ville-de-bordeaux-contributeurs/events/atelier-decriture-la-manucoplume)
+
+Sources: [97460159]",6,0.8,0.8423405658049243,4,277598899fd149d485c89aa360503d30,v2,v2_1,mistral-small-latest,mistral-small-latest,C:\Users\thoma\Documents\Openclassroom\Projet-9\artifacts\faiss_index_mistral,C:\Users\thoma\Documents\Openclassroom\Projet-9\data\processed\events_processed_geo.csv,True,1,1.0,1.0,1.0,0.16666666666666666,1.0,1.0,1.0
+"Le 22 mai 2025, quelle soirée « Th Da Freak ""Negative Freaks"" Release Party » (avec We Hate You Please Die + Opinion) a lieu à Bordeaux, et où ?","La soirée « Th Da Freak ""Negative Freaks"" Release Party » avec We Hate You Please Die et Opinion a lieu à la Rock School Barbey à Bordeaux le 22 mai 2025.
+
+Sources:
+[9081330]",6,1.0,0.8529490578638389,4,76490008e6d34b43a6eed8ac36d1308e,v2,v2_1,mistral-small-latest,mistral-small-latest,C:\Users\thoma\Documents\Openclassroom\Projet-9\artifacts\faiss_index_mistral,C:\Users\thoma\Documents\Openclassroom\Projet-9\data\processed\events_processed_geo.csv,True,1,1.0,1.0,1.0,0.16666666666666666,1.0,1.0,1.0
+"Le 17 mai 2025, quelle « visite botanique dans le Jardin » est proposée au Jardin Botanique de Bordeaux ? Donne la date et le lieu.","- **Visite botanique dans le Jardin**
+  - **Date:** 2025-05-17
+  - **Lieu:** Jardin Botanique de Bordeaux
+  - **URL:** [Visite botanique dans le Jardin](https://openagenda.com/ndm-2025-nouvelle-aquitaine/events/visite-botanique-dans-le-jardin)
+
+Sources: [39471080]",6,1.0,0.819032170761051,4,861ba73136024f3897b47e75d0bf5528,v2,v2_1,mistral-small-latest,mistral-small-latest,C:\Users\thoma\Documents\Openclassroom\Projet-9\artifacts\faiss_index_mistral,C:\Users\thoma\Documents\Openclassroom\Projet-9\data\processed\events_processed_geo.csv,True,1,1.0,1.0,1.0,0.16666666666666666,1.0,1.0,1.0
+"Quel spectacle « HOP(e), la comédie musicale improvisée » est programmé à Bordeaux le 7 octobre 2025, et dans quel lieu ?","Le spectacle « HOP(e), la comédie musicale improvisée » est programmé à Bordeaux le 7 octobre 2025 au lieu suivant :
+
+- **Titre:** HOP(e), La comédie musicale improvisée
+- **Date:** 2025-10-07
+- **Ville:** Bordeaux
+- **Lieu:** l'Estrade
+- **URL:** [https://openagenda.com/ville-de-bordeaux-contributeurs/events/hope-la-comedie-musicale-improvisee](https://openagenda.com/ville-de-bordeaux-contributeurs/events/hope-la-comedie-musicale-improvisee)
+
+Sources: [70709802]",6,1.0,0.9026322662029775,4,125cbd6f3e3f4ab3a02ab9e6209819a8,v2,v2_1,mistral-small-latest,mistral-small-latest,C:\Users\thoma\Documents\Openclassroom\Projet-9\artifacts\faiss_index_mistral,C:\Users\thoma\Documents\Openclassroom\Projet-9\data\processed\events_processed_geo.csv,True,1,1.0,1.0,1.0,0.16666666666666666,1.0,1.0,1.0
+"En septembre 2025, quelles visites guidées permettent de découvrir le Parc Lescure et le stade Chaban-Delmas à Bordeaux, et sur quelles dates ?","Voici les visites guidées permettant de découvrir le Parc Lescure et le stade Chaban-Delmas à Bordeaux en septembre 2025 :
+
+1. **Visites guidées du parc Lescure et du stade Chaban-Delmas**
+   - Dates: 2025-09-20 au 2025-09-21
+   - Ville: Bordeaux
+   - URL: https://openagenda.com/culture/events/visites-guidees-du-parc-lescure-stade-chaban-delmas-4603022
+
+Sources: [44892700]",6,1.0,0.9666825149599463,4,c28a07ac32a04439ba8b14dc0f965c99,v2,v2_1,mistral-small-latest,mistral-small-latest,C:\Users\thoma\Documents\Openclassroom\Projet-9\artifacts\faiss_index_mistral,C:\Users\thoma\Documents\Openclassroom\Projet-9\data\processed\events_processed_geo.csv,True,1,1.0,1.0,1.0,0.16666666666666666,1.0,1.0,1.0

@@ -1,0 +1,86 @@
+from __future__ import annotations
+
+import importlib.util
+import math
+import sys
+from pathlib import Path
+
+import pandas as pd
+
+
+def _load_run_ragas_module():
+    """
+    Charge evals/run_ragas.py comme module sans exécuter main().
+    Ça permet de tester compute_golden_metrics sans relancer le pipeline.
+    """
+    repo_root = Path(__file__).resolve().parents[1]
+    script_path = repo_root / "evals" / "run_ragas.py"
+    if not script_path.exists():
+        raise AssertionError(f"Missing file: {script_path}")
+
+    spec = importlib.util.spec_from_file_location("run_ragas", script_path)
+    if spec is None or spec.loader is None:
+        raise AssertionError("Unable to create module spec for run_ragas.py")
+
+    mod = importlib.util.module_from_spec(spec)
+    sys.modules["run_ragas"] = mod
+    spec.loader.exec_module(mod)
+    return mod
+
+
+def test_golden_metrics_keys_and_not_nan_when_hit():
+    mod = _load_run_ragas_module()
+
+    # Sanity: the helper must exist in your rewritten run_ragas.py
+    assert hasattr(mod, "compute_golden_metrics"), "compute_golden_metrics not found"
+
+    expected_ids = ["42"]
+    predicted_ids = ["10", "42", "99"]
+
+    metrics = mod.compute_golden_metrics(expected_ids, predicted_ids)
+
+    # Columns/keys we expect to exist (these become CSV columns)
+    expected_keys = {
+        "gold_n_expected",
+        "gold_n_hit",
+        "gold_hit_at_k",
+        "gold_precision_at_k",
+        "gold_recall_at_k",
+        "gold_mrr",
+    }
+    assert expected_keys.issubset(metrics.keys())
+
+    # Not NaN when we have a real expected list
+    assert not math.isnan(metrics["gold_hit_at_k"])
+    assert metrics["gold_hit_at_k"] == 1.0
+
+    # Check a couple of values
+    assert metrics["gold_n_expected"] == 1.0
+    assert metrics["gold_n_hit"] == 1.0
+    assert metrics["gold_mrr"] == 1.0 / 2.0  # "42" at rank 2
+
+
+def test_golden_metrics_integrates_as_dataframe_columns():
+    mod = _load_run_ragas_module()
+
+    metrics = mod.compute_golden_metrics(["A", "B"], ["X", "B", "A"])
+
+    row = {
+        "question": "dummy",
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.6,
+        **metrics,
+    }
+    df = pd.DataFrame([row])
+
+    # Ensure columns exist in the resulting dataframe (=> will land in CSV)
+    for col in [
+        "gold_hit_at_k",
+        "gold_precision_at_k",
+        "gold_recall_at_k",
+        "gold_mrr",
+    ]:
+        assert col in df.columns
+
+    assert df.loc[0, "gold_hit_at_k"] == 1.0
+    assert df.loc[0, "gold_mrr"] == 1.0 / 2.0  # "B" at rank 2

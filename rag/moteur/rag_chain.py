@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import os
 from typing import Any
+import random
+import time
 
 from dotenv import load_dotenv
 from mistralai import Mistral
@@ -26,7 +28,8 @@ def build_context(docs: list[Document]) -> tuple[str, list[dict[str, str]]]:
 
     for i, d in enumerate(docs, 1):
         md = d.metadata or {}
-        sid = f"S{i}"
+        raw_id = md.get("event_id")
+        sid = str(raw_id) if raw_id not in (None, "") else f"S{i}"
         title = str(md.get("title", "") or "")
         url = str(md.get("url", "") or "")
         city = str(md.get("city", "") or "")
@@ -58,21 +61,60 @@ def build_context(docs: list[Document]) -> tuple[str, list[dict[str, str]]]:
 def _mistral_chat(client: Mistral, model: str, system: str, user: str) -> str:
     """
     Compatible wrapper for the Mistral Python client.
+    Returns the generated text content (str).
+    Includes retry/backoff on HTTP 429 (rate limit).
     """
     messages = [
         {"role": "system", "content": system},
         {"role": "user", "content": user},
     ]
 
-    # API shape may vary slightly by version -> try common patterns
-    try:
-        resp = client.chat.complete(model=model, messages=messages, temperature=0.2)
-        return resp.choices[0].message.content
-    except AttributeError:
-        resp = client.chat.completions.create(
-            model=model, messages=messages, temperature=0.2
-        )
-        return resp.choices[0].message.content
+    max_retries = int(os.getenv("P9_MISTRAL_MAX_RETRIES", "6"))
+    base_sleep = float(os.getenv("P9_MISTRAL_RETRY_BASE_SLEEP", "1.5"))
+
+    last_exc: Exception | None = None
+
+    for attempt in range(max_retries):
+        try:
+            resp = client.chat.complete(model=model, messages=messages, temperature=0.2)
+
+            # Try common SDK shapes to extract the text.
+            # Shape A (OpenAI-like): resp.choices[0].message.content
+            try:
+                content = resp.choices[0].message.content  # type: ignore[attr-defined]
+                if content is not None:
+                    return str(content)
+            except Exception:
+                pass
+
+            # Shape B (newer structured output): resp.output[0].content[0].text
+            try:
+                content = resp.output[0].content[0].text  # type: ignore[attr-defined]
+                if content is not None:
+                    return str(content)
+            except Exception:
+                pass
+
+            # Fallback: stringify the response (last resort)
+            return str(resp)
+
+        except Exception as e:
+            last_exc = e
+            msg = str(e).lower()
+            is_429 = (
+                ("status 429" in msg)
+                or ("rate limit" in msg)
+                or ("rate_limited" in msg)
+            )
+            if not is_429 or attempt == max_retries - 1:
+                raise
+
+            # exponential backoff + jitter
+            sleep_s = base_sleep * (2**attempt) + random.uniform(0.0, 0.5)
+            time.sleep(sleep_s)
+
+    # Normally unreachable
+    raise RuntimeError("Mistral chat retry loop exhausted") from last_exc
 
 
 def answer_question(

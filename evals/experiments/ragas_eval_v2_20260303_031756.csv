@@ -1,0 +1,7 @@
+question,answer,k,faithfulness,answer_relevancy,n_contexts,turn_id,prompt_variant,prompt_version,chat_model,judge_model,index_dir,processed_csv,golden_used,gold_min_expected_matches,gold_n_expected,gold_n_hit,gold_hit_at_k,gold_precision_at_k,gold_recall_at_k,gold_mrr,gold_pass_min_matches
+"En 2025, quel événement à Bordeaux met à l'honneur l'entrepreneuriat et l'innovation technologique et inclut aussi un « Fund Connect » ? Donne le lieu et la date.","- **Bordeaux Tech'Day + Fund Connect**
+  - **Dates:** 2025-06-03
+  - **Ville:** Bordeaux
+  - **URL:** [https://openagenda.com/kestocal-agenda-collaboratif-evenements-supply-chain-france/events/bordeaux-techday-fund-connect-9236098](https://openagenda.com/kestocal-agenda-collaboratif-evenements-supply-chain-france/events/bordeaux-techday-fund-connect-9236098)
+
+Sources: [72387367]",6,1.0,0.879743745969323,4,68c9b5278dd54a2a848e4ea23db4936b,v2,v2_1,mistral-small-latest,mistral-small-latest,C:\Users\thoma\Documents\Openclassroom\Projet-9\artifacts\faiss_index_mistral,C:\Users\thoma\Documents\Openclassroom\Projet-9\data\processed\events_processed_geo.csv,True,1,1.0,1.0,1.0,0.16666666666666666,1.0,1.0,1.0
