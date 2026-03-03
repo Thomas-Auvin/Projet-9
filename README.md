@@ -109,7 +109,11 @@ uv run pytest -q
 Un script d’évaluation existe dans evals/. Pour le lancer il faut faire la commande suivante :
 
 ```bash
-uv run python evals/run_ragas.py --k 6 --limit 20
+PYTHONPATH=. P9_PROMPT_VARIANT=v2 P9_PROMPT_VERSION=v2_2 \
+uv run python evals/run_ragas.py \
+  --questions evals/datasets/golden.jsonl \
+  --golden evals/datasets/golden.jsonl \
+  --k 6 --limit 20 --sleep 0.8
 ```
-
+Pour évaluer un autre systeme de prompt il suffit de changer pour la variante correspondante dans l'appel. 
 Les résultats (CSV) sont enregistrés dans evals/experiments/.
