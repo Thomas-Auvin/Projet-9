@@ -35,3 +35,33 @@ jobs:
 
       - name: Pytest
         run: uv run pytest -q
+      
+      - name: Docker build
+        run: docker build -t p9-api:ci .
+
+      - name: Docker smoke test (/health)
+        run: |
+          set -e
+          mkdir -p artifacts outputs
+          trap 'docker rm -f p9-ci >/dev/null 2>&1 || true' EXIT
+
+          docker run -d --name p9-ci -p 8000:8000 \
+            -e MISTRAL_API_KEY="dummy" \
+            -e P9_INDEX_DIR="/app/artifacts/faiss_index_mistral" \
+            -e P9_PROCESSED_CSV="/app/data/processed/events_processed_geo.csv" \
+            -v "${{ github.workspace }}/data:/app/data" \
+            -v "${{ github.workspace }}/artifacts:/app/artifacts" \
+            -v "${{ github.workspace }}/outputs:/app/outputs" \
+            p9-api:ci
+
+          # wait for API readiness (max ~30s)
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:8000/health >/dev/null; then
+              echo "health ok"
+              break
+            fi
+            sleep 1
+          done
+
+          curl -fsS http://127.0.0.1:8000/health
+          docker logs p9-ci --tail 200
