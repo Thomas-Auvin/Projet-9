@@ -169,6 +169,15 @@ def feedback(
         raise HTTPException(status_code=400, detail=str(e))
 
 
+@app.get("/history")
+def get_history(engine: RagEngine = Depends(get_engine)):
+    items = engine.get_history()
+    return {
+        "count": len(items),
+        "items": items,
+    }
+
+
 @app.post("/rebuild", response_model=RebuildResponse)
 def rebuild(
     x_rebuild_token: str | None = Header(default=None, alias="X-Rebuild-Token"),
